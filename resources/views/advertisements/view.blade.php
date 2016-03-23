@@ -1,8 +1,9 @@
-<h2>List of Advertisements:</h2>
+<h2>Листа на огласи:</h2>
 <table>
     @foreach($advertisements as $advertisement)
         <tr>
-            <td><p>{{$advertisement->naslov}}</p></td>
+            <td><p><b>{{$advertisement->naslov}}</b></p></td>
+            <td><p>{{$advertisement->opis}}</p></td>
         </tr>
         @endforeach
 </table>

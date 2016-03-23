@@ -18,3 +18,6 @@ Route::get('/', function () {
 //view all advertisements
 Route::get('advertisements/view', 'AController@view')->name('advertisements.view');
 
+//add advertisement
+Route::get('advertisements/add', 'AController@create')->name('advertisements.add');
+Route::post('advertisements/add', 'AController@store')->name('advertisements.add');
