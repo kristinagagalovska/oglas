@@ -37,6 +37,12 @@ class AController extends Controller
 
         return redirect()->route('advertisements.view');
     }
+
+    public function show($id)
+    {
+        $advertisement = Advertisement::find($id);
+        return view('advertisements.show')->with('advertisement',$advertisement);
+    }
 }
 ?>
 
