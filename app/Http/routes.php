@@ -24,3 +24,7 @@ Route::post('advertisements/add', 'AController@store')->name('advertisements.add
 
 //show advertisement
 Route::get('advertisements/show/{id}', 'AController@show')->name('advertisements.show');
+
+//edit advertisement
+Route::get('advertisements/edit/{id}', 'AController@edit')->name('advertisements.edit');
+Route::post('advertisements/edit/{id}', 'AController@update')->name('advertisements.edit');
