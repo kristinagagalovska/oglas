@@ -28,3 +28,6 @@ Route::get('advertisements/show/{id}', 'AController@show')->name('advertisements
 //edit advertisement
 Route::get('advertisements/edit/{id}', 'AController@edit')->name('advertisements.edit');
 Route::post('advertisements/edit/{id}', 'AController@update')->name('advertisements.edit');
+
+//delete adverisement
+Route::get('advertisements/delete/{id}', 'AController@delete')->name('advertisements.delete');

@@ -68,6 +68,14 @@ class AController extends Controller
 
         return redirect()->route('advertisements.view');
     }
+
+    public function delete(Request $request, $id)
+    {
+        $advertisement = Advertisement::find($id);
+        $advertisement->delete();
+
+        return redirect()->route('advertisements.view');
+    }
 }
 ?>
 
