@@ -66,7 +66,7 @@ class AController extends Controller
         $advertisement->kat = $request->get('kat');
         $advertisement->save();
 
-        return redirect()->route('advertisements.view');
+        return redirect()->route('advertisements.show',$id);
     }
 
     public function delete(Request $request, $id)
