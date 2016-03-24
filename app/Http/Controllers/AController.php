@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Advertisement;
+use DB;
 
 class AController extends Controller
 {
@@ -77,7 +78,32 @@ class AController extends Controller
         return redirect()->route('advertisements.view');
     }
 
+    public function search(Request $request)
+    {
+        $status = $request->get('status');
+        $objekt = $request->get('objekt');
+        $grad = $request->get('grad');
+        $advertisements = DB::table('advertisements')
+            ->where('status', $status)
+                ->where('objekt',$objekt)
+                    ->where('grad',$grad)->get();
+        //dd($advertisements);
+        return view('advertisements.search')->with('advertisements', $advertisements);
 
+
+
+        /*//$advertisements = DB::Advertisement($request->all());
+
+        $status=$request->get('status');
+        $advertisements = Advertisement::find($status);
+        dd($advertisements);
+        //var_dump($advertisements);
+        //return view('advertisements.search')->with('advertisements', $advertisements);
+        //$advertisements = DB::select('select * from oglasi where status = ?', 'iznajmuva');*/
+
+       //
+       // return $advertisement->status;
+    }
 }
 ?>
 
