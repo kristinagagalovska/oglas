@@ -76,6 +76,8 @@ class AController extends Controller
 
         return redirect()->route('advertisements.view');
     }
+
+
 }
 ?>
 

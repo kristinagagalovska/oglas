@@ -11,6 +11,8 @@
             <td><p>{{$advertisement->parno}}</p></td>
             <td><p>{{$advertisement->lift}}</p></td>
             <td><p>{{$advertisement->kat}}</p></td>
+            <td><a href="{{route('advertisements.edit',$advertisement->id)}}">Edit</a></td>
+            <td><a href="{{route('advertisements.delete',$advertisement->id)}}">Delete</a></td>
             <td><a href="{{route('advertisements.view')}}">Back</a></td>
         </tr>
 </table>

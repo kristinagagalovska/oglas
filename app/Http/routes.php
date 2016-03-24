@@ -31,3 +31,7 @@ Route::post('advertisements/edit/{id}', 'AController@update')->name('advertiseme
 
 //delete adverisement
 Route::get('advertisements/delete/{id}', 'AController@delete')->name('advertisements.delete');
+
+//search advertisement
+Route::get('advertisements/search', 'AController@search1')->name('advertisements.search');
+
