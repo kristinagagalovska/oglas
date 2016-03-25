@@ -83,14 +83,38 @@ class AController extends Controller
         $status = $request->get('status');
         $objekt = $request->get('objekt');
         $grad = $request->get('grad');
-        $advertisements = DB::table('advertisements')
-            ->where('status', $status)
-            ->where('objekt',$objekt)
-            ->where('grad',$grad)
-            ->get();
+
+        if ($status == 'site') {
+            $advertisements = Advertisement::all()
+                ->where('objekt', $objekt)
+                ->where('grad', $grad);
+        } elseif ($status == 'site' && $objekt == 'site') {
+            $advertisements = Advertisement::all()
+                ->where('grad', $grad);
+        } elseif ($status == 'site' && $objekt == 'site' && $grad == 'site') {
+            $advertisements = Advertisement::all();
+        } elseif ($status == 'site' && $grad == 'site') {
+            $advertisements = Advertisement::all()
+                ->where('objekt', $objekt);
+        } elseif ($objekt == 'site' && $grad == 'site') {
+            $advertisements = Advertisement::all()
+                ->where('status', $status);
+        } elseif ($objekt == 'site') {
+            $advertisements = Advertisement::all()
+                ->where('status', $status)
+                ->where('grad', $grad);
+        } elseif ($grad == 'site') {
+            $advertisements = Advertisement::all()
+                ->where('status', $status)
+                ->where('objekt', $objekt);
+        } else {
+            $advertisements = Advertisement::all()
+                ->where('status', $status)
+                ->where('objekt', $objekt)
+                ->where('grad', $grad);
+        }
 
         return view('advertisements.view')->with('advertisements', $advertisements);
-
     }
 }
 ?>
