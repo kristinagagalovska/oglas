@@ -89,7 +89,7 @@ class AController extends Controller
             ->where('grad',$grad)
             ->get();
 
-        return view('advertisements.search')->with('advertisements', $advertisements);
+        return view('advertisements.view')->with('advertisements', $advertisements);
 
     }
 }
