@@ -30,14 +30,6 @@
                 <option value="stip">Штип</option>
             </select>
         </td>
-        <td>
-            <select name="id">
-                <option selected disabled name>Избери</option>
-                <option value="1">1</option>
-                <option value="4">4</option>
-            </select>
-        </td>
-
         <td><input type="submit" name="search"/></td>
     </tr>
 </table>
